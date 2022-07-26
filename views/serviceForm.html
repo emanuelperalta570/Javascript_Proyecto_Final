@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrico y asociados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Estudio juridico contable Enrico y Asociados.">
+	<meta name="keywords" content="Enzo Enrico estudio contable argentina buenos aires ">
+    <link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/estilo.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+<body class="container-fluid">
+    <header class="row display-flex-center">
+        <div class="col-1">
+        </div>
+        <nav class="col-10 navbar navbar-expand-lg navbar-light display-flex-center opensans">
+            <div class="container-fluid display-flex-center">
+              <button class="navbar-toggler display-flex-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse display-flex-center" id="navbarNavAltMarkup">
+                <div class="navbar-nav display-flex-center">
+                  <a class="nav-link active" href="../index.html" aria-current="page">Inicio</a>
+                  <a class="nav-link" href="#">Nosotros</a>
+                  <a class="nav-link" href="#">Solicitar Servicio</a>
+                  <a class="nav-link" href="#">Certificaciones</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        <div class="col-1">
+        </div>
+
+    </header>
+    <div class="row">
+        <div class="col-2"></div>
+        <h1 class="col-md-offset-2 col-8"   id="titulo">Bienvenido a nuestro sitio web!</h1>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <ul class="col-8 center producto-contenedor" id="servicios"></ul> 
+        <div class="col-2"></div>  
+        <div class="col-2"></div>
+        <form action="#" class="formulario col-8 center">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+            <br>
+            <input type="text" name="dni" id="dni" placeholder="DNI">
+            <br>
+            <input type="text" name="q_emp" id="q_emp" placeholder="Cantidad de empleados">
+            <br>
+            <input type="mail" name="mail" id="mailElement" placeholder="Mail">
+            <br>
+            <input type="submit" value="Enviar" id="btn-enviar">
+            <input type="submit" value="Cancelar" id="btn-cancelar">
+        </form>	
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-8" id="contenedor-body"></div>
+        <div class="col-2"></div>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

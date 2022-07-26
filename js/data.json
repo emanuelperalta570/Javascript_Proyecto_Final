@@ -1,0 +1,22 @@
+{
+    "clientes":[
+        {
+            "id":"2",
+            "nombre": "Sin empleados",
+            "valor":"$3000",
+            "img":"../assets/img/servicios/RI.jpg"
+        },
+        {
+            "id":"3",
+            "nombre": "Menos de 5 empleados",
+            "valor":"a partir de $3200",
+            "img":"../assets/img/servicios/menosCincoEmp.jpg"
+        },
+        {
+            "id":"4",
+            "nombre": "Mas de 5 empleados",
+            "valor":"a partir de $4200",
+            "img":"../assets/img/servicios/masCincoEmp.jpg"
+        }
+    ]
+}
