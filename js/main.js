@@ -44,6 +44,17 @@ function validarDNI(x){
     }
 }
 
+function validarEmail(email) 
+{
+    let re = /\S+@\S+\.\S+/;
+    if(re.test(email)){
+        return 1;
+    }else{
+        return -1;
+    }
+
+}
+
 class Cliente{
     constructor(nombreUsuario,dniUsuario,cantEmpleados,mail){
         this.nombre=nombreUsuario;
@@ -74,6 +85,7 @@ class ServicioSolic{
 let indexUsuario=-2;
 let indexDNI=-2;
 let indexQEMP=-2;
+let indexMail=-2;
 const clientes=[];
 
 const cliente1 = new Cliente ("EMANUEL",36873055,5,"ema@gmail.com");
@@ -130,38 +142,49 @@ do{
         }
     }while(indexUsuario>=0)
 
-        if(indexDNI==-2){
+    if(indexDNI==-2){
             dni=document.getElementById("dni");
             dni.onchange = (e) => {
             dni=e.target.value;
             indexDNI=validarDNI(dni);
-                if(indexDNI==-1){
+                if(indexDNI==1){
+                }else{
                     var dni = document.getElementById("dni");
                     dni.value = dni.defaultValue;
                 }
             }
         }
-
+    if(indexMail==-2){
+            mail=document.getElementById("mailElement");
+            mail.onchange = (e) => {
+            mail=e.target.value;
+            indexMail=validarEmail(mail);
+                if(indexMail==-1){
+                    var mail = document.getElementById("mailElement");
+                    mail.value = mail.defaultValue;
+                    swal({
+                        title: "El mail ingresado es incorrecto",
+                        icon:"warning"
+                    })
+                }else{
+                    swal({
+                        title: "El mail ingresado es correcto",
+                        icon:"success"
+                    })
+                }
+            }
+    }
+        
+    
 
 
     
 } while((nombre == "") || (dni==NaN) || cantEmpleados=="")
 
 
-
-let mail=document.getElementById("mailElement");
-
 cantEmpleados.onchange = (e) =>{
     cantEmpleados=e.target.value;
 }
-
-mail.onchange = (e) =>{
-    mail=e.target.value;
-}
-
-
-
-
 
 let enviar = document.getElementById("btn-enviar");
 enviar.onclick= (e) => {
@@ -177,13 +200,12 @@ enviar.onclick= (e) => {
             icon:"warning",
         })
     }else{
-
-    let cliente6 = new Cliente (nombre.value.toUpperCase(),dni.value,cantEmpleados,mail);
+    
+    let cliente6 = new Cliente (nombre.value.toUpperCase(),dni.value,cantEmpleados,mail.value);
     clientes.push(cliente6);
     cliente6.calcularTotal();
     let container = document.getElementById("contenedor-body");
-    cliente6.mail="" ? cliente6.mail="NULL": cliente6.mail=cliente6.mail ;
-    
+       
    
     let servicioEnCarrito = new ServicioSolic (cliente6.nombre,cantEmpleados,cliente6.total,cliente6.mail);
 
